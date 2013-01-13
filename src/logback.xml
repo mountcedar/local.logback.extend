@@ -1,0 +1,24 @@
+<configuration>
+  <appender name="STDOUT"
+    class="ch.qos.logback.core.ConsoleAppender">
+   <Target>System.out</Target>
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} %M:%L - %msg%n</Pattern>
+    </layout>
+  </appender>
+
+  <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+
+  <appender name="CONSOLEOUT"
+    class="jp.atr.irc.is.logback.gui.UIAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} %M:%L - %msg%n</Pattern>
+    </layout>
+  </appender>
+
+  <!-- debug level settings for each package or class -->
+  <root>
+    <level value="debug" ></level>
+    <appender-ref ref="CONSOLEOUT" />
+  </root>
+</configuration>
